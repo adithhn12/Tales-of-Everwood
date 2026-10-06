@@ -47,7 +47,7 @@ The current version contains a single playable area with enemies, combat, XP pro
 
 ### Main Menu
 
-![Tales of Everwood - Main Menu](screenshots/mainmenu.png)
+![Tales of Everwood - Main Menu](screenshots/main-menu.png)
 
 ### Gameplay
 
