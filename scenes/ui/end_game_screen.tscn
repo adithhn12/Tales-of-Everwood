@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://6ptpwgmqoul0"]
+
+[ext_resource type="FontFile" uid="uid://mp0tjhpt8jgt" path="res://assets/horrendo.ttf" id="1_ketox"]
+[ext_resource type="Script" uid="uid://3lhgj6aysbhr" path="res://scenes/ui/end_game_screen.gd" id="1_svl4o"]
+[ext_resource type="Texture2D" uid="uid://d2nocmrtup5re" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides.png" id="2_svl4o"]
+[ext_resource type="Texture2D" uid="uid://44jhn5n05u0b" path="res://assets/Tiny Swords/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="3_x8rbx"]
+[ext_resource type="Texture2D" uid="uid://b36oaia73w4we" path="res://assets/Tiny Swords/UI/Buttons/Button_Hover_3Slides.png" id="4_grgci"]
+
+[node name="EndGameScreen" type="Control" unique_id=521541842]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_svl4o")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1726322336]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.4)
+
+[node name="VB" type="VBoxContainer" parent="." unique_id=1276142922]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 150
+alignment = 1
+
+[node name="Result" type="Label" parent="VB" unique_id=1356128235]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7607843)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 12
+theme_override_fonts/font = ExtResource("1_ketox")
+theme_override_font_sizes/font_size = 164
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="VB" unique_id=21141796]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Replay" type="TextureButton" parent="VB/Buttons" unique_id=2117261005]
+custom_minimum_size = Vector2(450, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_svl4o")
+texture_pressed = ExtResource("3_x8rbx")
+texture_hover = ExtResource("4_grgci")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VB/Buttons/Replay" unique_id=2102384747]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7607843)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 12
+theme_override_fonts/font = ExtResource("1_ketox")
+theme_override_font_sizes/font_size = 50
+text = "REPLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainMenu" type="TextureButton" parent="VB/Buttons" unique_id=113675378]
+custom_minimum_size = Vector2(450, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("2_svl4o")
+texture_pressed = ExtResource("3_x8rbx")
+texture_hover = ExtResource("4_grgci")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="VB/Buttons/MainMenu" unique_id=483463572]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7607843)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_outline_size = 12
+theme_override_fonts/font = ExtResource("1_ketox")
+theme_override_font_sizes/font_size = 50
+text = "MAIN MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="VB/Buttons/Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="VB/Buttons/MainMenu" to="." method="_on_main_menu_pressed"]
