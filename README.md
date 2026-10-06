@@ -1,12 +1,12 @@
 # Tales of Everwood
 
-A colorful top-down fantasy RPG developed using Godot and GDScript.
+A colorful top-down RPG adventure developed using Godot and GDScript.
 
 ## 🎮 About
 
 Tales of Everwood is a top-down fantasy adventure where the player controls a knight exploring the world, fighting enemies, gaining experience, and becoming stronger.
 
-This project is currently a playable prototype, with plans to expand it into a larger story-driven RPG with multiple maps and areas.
+The current version is a playable prototype, with plans to expand it into a larger story-driven RPG with multiple maps and areas.
 
 ## ✨ Features
 
@@ -26,7 +26,6 @@ This project is currently a playable prototype, with plans to expand it into a l
 
 - **Godot Engine**
 - **GDScript**
-- **2D Pixel Art**
 
 ## 🎨 Assets & Credits
 
@@ -44,6 +43,27 @@ All credit for the original Tiny Swords assets goes to Pixel Frog.
 
 The current version contains a single playable area with enemies, combat, XP progression, victory, and game-over systems.
 
+## 📸 Screenshots
+
+### Main Menu
+
+![Tales of Everwood - Main Menu](screenshots/mainmenu.png)
+
+### Gameplay
+
+![Tales of Everwood - Gameplay](screenshots/gameplay.png)
+
+### Victory
+
+![Tales of Everwood - Victory](screenshots/victory.png)
+
+## 🎮 Controls
+
+| Action | Control |
+|---|---|
+| Move | WASD |
+| Attack | Left Mouse Button |
+
 ## 🚀 Future Plans
 
 - Multiple story-driven maps
@@ -54,17 +74,6 @@ The current version contains a single playable area with enemies, combat, XP pro
 - Story progression
 - Expanded world exploration
 - More levels and environments
-
-## 🎮 Controls
-
-| Action | Control |
-|---|---|
-| Move | WASD |
-| Attack | Left Mouse Button |
-
-## 📸 Screenshots
-
-Screenshots will be added as development continues.
 
 ## 👨‍💻 Developer
 
