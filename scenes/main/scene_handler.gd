@@ -1,4 +1,3 @@
-
 extends Node
 
 @export var main_menu_packed: PackedScene
@@ -10,11 +9,17 @@ func _ready() -> void:
 
 
 func load_main_menu(origin: String) -> void:
-	if origin == "end_game_screen" or origin == "pause_menu":
-		var old_game = get_node_or_null("GameScene")
-		if old_game:
-			old_game.queue_free()
-			await get_tree().process_frame
+	get_tree().paused = false
+
+	var old_game = get_node_or_null("GameScene")
+	if old_game:
+		old_game.queue_free()
+		await get_tree().process_frame
+
+	var old_menu = get_node_or_null("MainMenu")
+	if old_menu:
+		old_menu.queue_free()
+		await get_tree().process_frame
 
 	var main_menu: Control = main_menu_packed.instantiate()
 	main_menu.name = "MainMenu"
@@ -28,17 +33,17 @@ func load_main_menu(origin: String) -> void:
 
 
 func new_game(origin: String) -> void:
-	if origin == "main_menu":
-		var old_menu = get_node_or_null("MainMenu")
-		if old_menu:
-			old_menu.queue_free()
-			await get_tree().process_frame
+	get_tree().paused = false
 
-	elif origin == "end_game_screen" or origin == "pause_menu":
-		var old_game = get_node_or_null("GameScene")
-		if old_game:
-			old_game.queue_free()
-			await get_tree().process_frame
+	var old_game = get_node_or_null("GameScene")
+	if old_game:
+		old_game.queue_free()
+		await get_tree().process_frame
+
+	var old_menu = get_node_or_null("MainMenu")
+	if old_menu:
+		old_menu.queue_free()
+		await get_tree().process_frame
 
 	var game_scene: Node2D = game_scene_packed.instantiate()
 	game_scene.name = "GameScene"
@@ -55,18 +60,10 @@ func new_game(origin: String) -> void:
 
 
 func restart_from_pause() -> void:
-	get_tree().paused = false
-
-	var game = get_node_or_null("GameScene")
-	if game:
-		game.queue_free()
-		await get_tree().process_frame
-
 	new_game("pause_menu")
 
 
 func return_to_menu_from_pause() -> void:
-	get_tree().paused = false
 	await load_main_menu("pause_menu")
 
 

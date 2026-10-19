@@ -12,7 +12,7 @@ enum State {
 
 @export_category("Stats")
 @export var speed: int = 128
-@export var attack_damage: int = 10
+@export var attack_damage: int = 5
 @export var attack_speed: float = 1.0
 @export var hitpoints: int = 180
 @export var aggro_range: float = 256.0

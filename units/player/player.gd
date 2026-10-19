@@ -12,7 +12,7 @@ enum State {
 
 @export_category("Stats")
 @export var speed: int = 200
-@export var attack_damage: int = 60
+@export var attack_damage: int = 100
 @export var hitpoints: int = 150
 
 var state: State = State.IDLE
