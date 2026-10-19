@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dars8fpqrrv0x" path="res://scenes/main/hud.gd" id="4_o41ig"]
 [ext_resource type="Texture2D" uid="uid://cx6ggy6rvwb3a" path="res://assets/Tiny Swords/UI/Banners/Carved_3Slides.png" id="4_ynmmy"]
 [ext_resource type="Texture2D" uid="uid://c634ojpmjfarh" path="res://assets/Tiny Swords/UI/Banners/Banner_Connection_Up.png" id="5_o41ig"]
-[ext_resource type="FontFile" uid="uid://mp0tjhpt8jgt" path="res://assets/horrendo.ttf" id="6_wktqh"]
+[ext_resource type="FontFile" uid="uid://dnrf8cwm0r8kp" path="res://assets/Firlest-Regular.otf" id="7_wktqh"]
 [ext_resource type="PackedScene" uid="uid://cvr5ca8egqlyr" path="res://scenes/ui/pause_menu.tscn" id="8_wktqh"]
 
 [node name="GameScene" type="Node2D" unique_id=555981757]
@@ -73,7 +73,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.7607843)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_constants/shadow_outline_size = 12
-theme_override_fonts/font = ExtResource("6_wktqh")
+theme_override_fonts/font = ExtResource("7_wktqh")
 theme_override_font_sizes/font_size = 50
 text = "-"
 horizontal_alignment = 1
