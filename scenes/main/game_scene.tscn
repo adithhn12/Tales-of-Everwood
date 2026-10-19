@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cx6ggy6rvwb3a" path="res://assets/Tiny Swords/UI/Banners/Carved_3Slides.png" id="4_ynmmy"]
 [ext_resource type="Texture2D" uid="uid://c634ojpmjfarh" path="res://assets/Tiny Swords/UI/Banners/Banner_Connection_Up.png" id="5_o41ig"]
 [ext_resource type="FontFile" uid="uid://mp0tjhpt8jgt" path="res://assets/horrendo.ttf" id="6_wktqh"]
+[ext_resource type="PackedScene" uid="uid://cvr5ca8egqlyr" path="res://scenes/ui/pause_menu.tscn" id="8_wktqh"]
 
 [node name="GameScene" type="Node2D" unique_id=555981757]
 script = ExtResource("1_rfwcf")
@@ -77,3 +78,7 @@ theme_override_font_sizes/font_size = 50
 text = "-"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PauseMenu" parent="UI" unique_id=521541842 instance=ExtResource("8_wktqh")]
+process_mode = 3
+visible = false

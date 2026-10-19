@@ -1,3 +1,4 @@
+
 extends Node
 
 @export var main_menu_packed: PackedScene
@@ -9,11 +10,14 @@ func _ready() -> void:
 
 
 func load_main_menu(origin: String) -> void:
-	if origin == "end_game_screen":
-		get_node("GameScene").queue_free()
-		await get_tree().process_frame
+	if origin == "end_game_screen" or origin == "pause_menu":
+		var old_game = get_node_or_null("GameScene")
+		if old_game:
+			old_game.queue_free()
+			await get_tree().process_frame
 
 	var main_menu: Control = main_menu_packed.instantiate()
+	main_menu.name = "MainMenu"
 
 	main_menu.new_game_pressed.connect(new_game)
 	main_menu.settings_pressed.connect(settings_open)
@@ -25,23 +29,52 @@ func load_main_menu(origin: String) -> void:
 
 func new_game(origin: String) -> void:
 	if origin == "main_menu":
-		get_node("MainMenu").queue_free()
+		var old_menu = get_node_or_null("MainMenu")
+		if old_menu:
+			old_menu.queue_free()
+			await get_tree().process_frame
 
-	if origin == "end_game_screen":
-		get_node("GameScene").queue_free()
-		await get_tree().process_frame
+	elif origin == "end_game_screen" or origin == "pause_menu":
+		var old_game = get_node_or_null("GameScene")
+		if old_game:
+			old_game.queue_free()
+			await get_tree().process_frame
 
 	var game_scene: Node2D = game_scene_packed.instantiate()
+	game_scene.name = "GameScene"
 	add_child(game_scene)
+
+	var pause_menu = game_scene.find_child("PauseMenu", true, false)
+
+	if pause_menu:
+		if not pause_menu.restart_game.is_connected(restart_from_pause):
+			pause_menu.restart_game.connect(restart_from_pause)
+
+		if not pause_menu.main_menu.is_connected(return_to_menu_from_pause):
+			pause_menu.main_menu.connect(return_to_menu_from_pause)
+
+
+func restart_from_pause() -> void:
+	get_tree().paused = false
+
+	var game = get_node_or_null("GameScene")
+	if game:
+		game.queue_free()
+		await get_tree().process_frame
+
+	new_game("pause_menu")
+
+
+func return_to_menu_from_pause() -> void:
+	get_tree().paused = false
+	await load_main_menu("pause_menu")
 
 
 func settings_open(_origin: String) -> void:
-	# would open up the settings menu
 	pass
 
 
 func about_open(_origin: String) -> void:
-	# would open up an about page to talk about your studio or social links
 	pass
 
 

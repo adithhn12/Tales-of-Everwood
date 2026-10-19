@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://076h0w4wo7qk"
-path="res://.godot/imported/Screenshot (1809).png-7868a217333226371e134c6061806c59.ctex"
+uid="uid://h4yp2sk044ki"
+path="res://.godot/imported/Tranquil Lakeside Ruins Backdrop.png-4beddab6b93cfaa739dcbae38190494b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://screenshots/Screenshot (1809).png"
-dest_files=["res://.godot/imported/Screenshot (1809).png-7868a217333226371e134c6061806c59.ctex"]
+source_file="res://assets/Tranquil Lakeside Ruins Backdrop.png"
+dest_files=["res://.godot/imported/Tranquil Lakeside Ruins Backdrop.png-4beddab6b93cfaa739dcbae38190494b.ctex"]
 
 [params]
 

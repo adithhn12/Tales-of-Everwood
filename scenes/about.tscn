@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://c1hrwbfbliiee"]
+
+[ext_resource type="Script" uid="uid://dbcg15mxd620s" path="res://scenes/about.gd" id="1_j4mam"]
+[ext_resource type="Texture2D" uid="uid://h4yp2sk044ki" path="res://assets/Tranquil Lakeside Ruins Backdrop.png" id="2_j4mam"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_htemk"]
+
+[node name="AboutScreen" type="Control" unique_id=655788048]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_j4mam")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1465113405]
+modulate = Color(1, 1, 1, 0.5686275)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_j4mam")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1925237835]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="CenterContainer" unique_id=1361107279]
+custom_minimum_size = Vector2(600, 350)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_htemk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/Panel" unique_id=525175423]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=2137312486]
+layout_mode = 2
+text = "TALES OF EVERWOOD"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=557780412]
+layout_mode = 2
+text = "Explore the mysterious lands of Everwood, battle dangerous enemies, and grow stronger on your adventure."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Credits" type="Label" parent="CenterContainer/Panel/VBoxContainer" unique_id=1364182636]
+layout_mode = 2
+text = "Developed by: Adith H N
+Version 1.0"
+
+[node name="BackButton" type="Button" parent="CenterContainer/Panel/VBoxContainer" unique_id=1371464965]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "← BACK TO MENU"
+
+[connection signal="pressed" from="CenterContainer/Panel/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]
