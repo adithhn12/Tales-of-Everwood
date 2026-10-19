@@ -61,8 +61,8 @@ The current version contains a single playable area with enemies, combat, XP pro
 
 | Action | Control |
 |---|---|
-| Move | WASD |
-| Attack | Left Mouse Button |
+| Move | WASD Keys|
+| Attack | Space BUtton |
 
 ## 🚀 Future Plans
 
