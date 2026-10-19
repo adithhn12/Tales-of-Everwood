@@ -54,7 +54,7 @@ Play the game directly in your browser or download the Windows build from [itch.
 
 ### Main Menu
 
-![Tales of Everwood - Main Menu](screenshots/main-menu.png)
+![Tales of Everwood - Main Menu](screenshots/menu.png)
 
 ### Gameplay
 
@@ -62,7 +62,7 @@ Play the game directly in your browser or download the Windows build from [itch.
 
 ### Victory
 
-![Tales of Everwood - Victory](screenshots/victory.png)
+![Tales of Everwood - Victory](screenshots/end.png)
 
 ## 🎮 Controls
 
